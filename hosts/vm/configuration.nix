@@ -51,6 +51,7 @@
     enable = true;
     windowManager.awesome = {
       enable = true;
+      package = pkgs.awesome-git;
       luaModules = lib.attrValues {
         inherit (pkgs.luaPackages) lgi;
       };
@@ -80,6 +81,7 @@
     zsh
     neofetch
     firefox
+    git
 
     (st.overrideAttrs (old: rec {
       src = builtins.fetchTarball {
