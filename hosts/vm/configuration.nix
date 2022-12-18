@@ -51,9 +51,8 @@
     enable = true;
     windowManager.awesome = {
       enable = true;
-      package = pkgs.awesome-git;
       luaModules = lib.attrValues {
-        inherit (pkgs.luaPackages) lgi;
+        inherit (pkgs.luaPackages) lgi ldbus luadbi-mysql luaposix;
       };
     };
     displayManager.sddm.enable = true;
