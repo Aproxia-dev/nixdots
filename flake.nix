@@ -19,7 +19,7 @@
     with nixpkgs.lib;
     let
       config = {
-        allowUnfree = true;
+	allowUnfree = true;
 	allowBroken = true;
       };
       
