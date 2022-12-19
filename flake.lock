@@ -130,6 +130,22 @@
         "type": "github"
       }
     },
+    "nix-hw": {
+      "locked": {
+        "lastModified": 1671467847,
+        "narHash": "sha256-eIeZIQbbW0QYDW0nhDaieokw6VakPO3TyJ3RmxqGHOs=",
+        "owner": "nixos",
+        "repo": "nixos-hardware",
+        "rev": "25010a042c23695ae457a97aad60e9b1d49f2ecc",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "master",
+        "repo": "nixos-hardware",
+        "type": "github"
+      }
+    },
     "nixos-unstable": {
       "locked": {
         "lastModified": 1671200928,
@@ -209,6 +225,21 @@
         "type": "github"
       }
     },
+    "nur": {
+      "locked": {
+        "lastModified": 1671479100,
+        "narHash": "sha256-dYh61DMUo0QWyFeSMzeYe3dMGLIehCnyevNTJGGyyhs=",
+        "owner": "nix-community",
+        "repo": "NUR",
+        "rev": "aa5687d6ff2f916d08fe0a4a9a84edc86867df43",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "NUR",
+        "type": "github"
+      }
+    },
     "river-src": {
       "flake": false,
       "locked": {
@@ -231,13 +262,17 @@
       "inputs": {
         "home": "home",
         "master": "master",
+        "nix-hw": "nix-hw",
         "nixos-unstable": "nixos-unstable",
         "nixpkgs": [
           "nixpkgs-unstable"
         ],
         "nixpkgs-f2k": "nixpkgs-f2k",
         "nixpkgs-unstable": "nixpkgs-unstable",
-        "stable": "stable"
+        "nur": "nur",
+        "stable": "stable",
+        "zsh-completions": "zsh-completions",
+        "zsh-syntax-highlighting": "zsh-syntax-highlighting"
       }
     },
     "rust-analyzer-src": {
@@ -332,6 +367,38 @@
         "submodules": true,
         "type": "git",
         "url": "https://github.com/wez/wezterm.git"
+      }
+    },
+    "zsh-completions": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1671110471,
+        "narHash": "sha256-B7ia4UTIMwRza//NYRr7rZn9Kin2fbCnnXwH9MUZGBg=",
+        "owner": "zsh-users",
+        "repo": "zsh-completions",
+        "rev": "b215131217582b1c634c57ffc61bf3e33190c5f1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "zsh-users",
+        "repo": "zsh-completions",
+        "type": "github"
+      }
+    },
+    "zsh-syntax-highlighting": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1668889847,
+        "narHash": "sha256-lxwkVq9Ysvl2ZosD+riQ8dsCQIB5X4kqP+ix7XTDkKw=",
+        "owner": "zsh-users",
+        "repo": "zsh-syntax-highlighting",
+        "rev": "b2c910a85ed84cb7e5108e7cb3406a2e825a858f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "zsh-users",
+        "repo": "zsh-syntax-highlighting",
+        "type": "github"
       }
     }
   },
