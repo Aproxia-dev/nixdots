@@ -270,6 +270,7 @@
         "nixpkgs-f2k": "nixpkgs-f2k",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "nur": "nur",
+        "secrets": "secrets",
         "stable": "stable",
         "zsh-completions": "zsh-completions",
         "zsh-syntax-highlighting": "zsh-syntax-highlighting"
@@ -317,6 +318,19 @@
         "owner": "oxalica",
         "repo": "rust-overlay",
         "type": "github"
+      }
+    },
+    "secrets": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1671710123,
+        "narHash": "sha256-PldWWVr2zhII1SDovz3pNO2aJd4EwnXRUh5FwJmZXQo=",
+        "path": "/home/apro/.secrets",
+        "type": "path"
+      },
+      "original": {
+        "path": "/home/apro/.secrets",
+        "type": "path"
       }
     },
     "stable": {

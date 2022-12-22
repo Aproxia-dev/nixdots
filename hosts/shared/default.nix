@@ -96,6 +96,7 @@
 	};
 
 	programs = {
+		dconf.enable = true;
 		gnupg.agent = {
 			enable = true;
 			enableSSHSupport = true;
@@ -114,8 +115,31 @@
 			};
 		};
 
+		dbus = {
+    		enable = true;
+    		packages = with pkgs; [dconf gcr];
+    	};
+
 		openssh.enable = true;
+
+		xserver = {
+			enable = true;
+			layout = "us,colemak_dh_cz";
+			xkbVariant = "colemak_dh,";
+
+			windowManager.awesome = {
+				enable = true;
+				luaModules = lib.attrValues {
+					inherit (pkgs.luaPackages) lgi ldbus luadbi-mysql luaposix;
+				};
+			};
+
+			displayManager = {
+				lightdm.enable = true;
+				defaultSession = "none+awesome";
+			};
+		};
 	};
 
-	system.stateVersion = "22.05";
+	system.stateVersion = "22.11";
 }

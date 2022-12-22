@@ -25,6 +25,11 @@
 		nixpkgs.follows = "nixpkgs-unstable";
 		home.inputs.nixpkgs.follows = "nixpkgs";
 		nixpkgs-f2k.inputs.nixpkgs.follows = "nixpkgs";
+
+		secrets = {
+			url = "path:/home/apro/.secrets";
+			flake = false;
+		};
 	};
 
 	outputs = {
@@ -39,6 +44,12 @@
 				allowUnfree = true;
 				allowBroken = true;
 			};
+
+			filterNixFiles = k: v: v == "regular" && hasSuffix ".nix" k;
+    		
+			importNixFiles = path:
+      			(lists.forEach (mapAttrsToList (name: _: path + ("/" + name))
+          			(filterAttrs filterNixFiles (builtins.readDir path)))) import;
 
 			overlays = with inputs; [
 				(
@@ -55,8 +66,9 @@
 							stable = import stable {inherit config system;};
 						}
 				)
+				nur.overlay
 				nixpkgs-f2k.overlays.default
-			];
+			] ++ (importNixFiles ./overlays);
 		in {
 			nixosConfigurations = {
 				vm =
