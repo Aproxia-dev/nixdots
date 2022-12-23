@@ -1,6 +1,7 @@
 { config, inputs, lib, pkgs, system, ... }:
 
-{
+let run = import ../shared/bin/run.nix { inherit pkgs; };
+in {
 	home = {
 		packages = with pkgs; [
 			(rofi.override { plugins = [ rofimoji rofi-bluetooth ];})
@@ -17,6 +18,8 @@
 			dconf
 			btop
 			htop
+			bottom
+			run # credit to alpha for this
 		];
 
 		pointerCursor = {

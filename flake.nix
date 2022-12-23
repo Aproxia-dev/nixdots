@@ -7,15 +7,6 @@
 		nixpkgs-f2k.url = "github:fortuneteller2k/nixpkgs-f2k";
 		nur.url = "github:nix-community/NUR";
 
-		zsh-completions = {
-			url = "github:zsh-users/zsh-completions";
-			flake = false;
-		};
-
-		zsh-syntax-highlighting = {
-			url = "github:zsh-users/zsh-syntax-highlighting";
-			flake = false;
-		};
 
 		master.url = "github:nixos/nixpkgs/master";
 		stable.url = "github:nixos/nixpkgs/nixos-22.11";

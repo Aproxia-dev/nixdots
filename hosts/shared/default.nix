@@ -1,13 +1,14 @@
 {
 	config,
 	pkgs,
-    lib,
+  lib,
 	...
 }: {
 	nix.settings.experimental-features = ["nix-command" "flakes"];
 
-    boot.kernelPackages = pkgs.linuxPackages_zen;
+  boot.kernelPackages = pkgs.linuxPackages_zen;
 	networking.networkmanager.enable = true;
+	console.useXkbConfig = true;
 
 	time = {
 		timeZone = "Europe/Prague";
@@ -42,33 +43,33 @@
 		shells = with pkgs; [zsh];
 
 		systemPackages = lib.attrValues {
-            inherit (pkgs)
-                cmake
-			    coreutils
-			    curl
-			    fd
-			    ffmpeg
-			    gcc
-			    git
-			    glib
-			    home-manager
-			    libnotify
-                lm_sensors
-			    man-pages
-                pciutils
-			    pulsemixer
-                ripgrep
-			    unrar
-			    unzip
-			    neovim
-			    wget
-			    xarchiver
-			    xclip
-			    zip;
-            
-            inherit (pkgs.mate)
-                mate-polkit;
-        };
+			inherit (pkgs)
+				cmake
+			  coreutils
+			  curl
+			  fd
+			  ffmpeg
+			  gcc
+			  git
+			  glib
+			  home-manager
+			  libnotify
+				lm_sensors
+			  man-pages
+				pciutils
+			  pulsemixer
+				ripgrep
+			  unrar
+			  unzip
+			  neovim
+			  wget
+			  xarchiver
+			  xclip
+			  zip;
+          
+      inherit (pkgs.mate)
+        mate-polkit;
+    };
 
 		variables.EDITOR = "nvim";
 		sessionVariables.MOZ_USE_XINPUT2 = "1";
@@ -77,9 +78,9 @@
 	fonts = {
 		fonts = lib.attrValues {
             inherit (pkgs)
-                twitter-color-emoji
-		        noto-fonts
-		        lato;
+							twitter-color-emoji
+							noto-fonts
+							lato;
         } ++ [(pkgs.nerdfonts.override {fonts = ["Iosevka" "JetBrainsMono"];})];
         
 
@@ -94,6 +95,7 @@
 		pipewire.wantedBy = ["default.target"];
 		pipewire-pulse.wantedBy = ["default.target"];
 	};
+
 
 	programs = {
 		dconf.enable = true;
@@ -116,16 +118,21 @@
 		};
 
 		dbus = {
-    		enable = true;
-    		packages = with pkgs; [dconf gcr];
-    	};
+    	enable = true;
+    	packages = with pkgs; [dconf gcr];
+    };
 
 		openssh.enable = true;
 
 		xserver = {
 			enable = true;
-			layout = "us,colemak_dh_cz";
-			xkbVariant = "colemak_dh,";
+			layout = "fck";
+			
+			extraLayouts.fck = {
+				description = "Fancy Czech Keyboard";
+				languages = [ "en" "cs" ];
+				symbolsFile = ../../keymaps/fck;
+			};
 
 			windowManager.awesome = {
 				enable = true;

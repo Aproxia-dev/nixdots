@@ -271,9 +271,7 @@
         "nixpkgs-unstable": "nixpkgs-unstable",
         "nur": "nur",
         "secrets": "secrets",
-        "stable": "stable",
-        "zsh-completions": "zsh-completions",
-        "zsh-syntax-highlighting": "zsh-syntax-highlighting"
+        "stable": "stable"
       }
     },
     "rust-analyzer-src": {
@@ -381,38 +379,6 @@
         "submodules": true,
         "type": "git",
         "url": "https://github.com/wez/wezterm.git"
-      }
-    },
-    "zsh-completions": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1671110471,
-        "narHash": "sha256-B7ia4UTIMwRza//NYRr7rZn9Kin2fbCnnXwH9MUZGBg=",
-        "owner": "zsh-users",
-        "repo": "zsh-completions",
-        "rev": "b215131217582b1c634c57ffc61bf3e33190c5f1",
-        "type": "github"
-      },
-      "original": {
-        "owner": "zsh-users",
-        "repo": "zsh-completions",
-        "type": "github"
-      }
-    },
-    "zsh-syntax-highlighting": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1668889847,
-        "narHash": "sha256-lxwkVq9Ysvl2ZosD+riQ8dsCQIB5X4kqP+ix7XTDkKw=",
-        "owner": "zsh-users",
-        "repo": "zsh-syntax-highlighting",
-        "rev": "b2c910a85ed84cb7e5108e7cb3406a2e825a858f",
-        "type": "github"
-      },
-      "original": {
-        "owner": "zsh-users",
-        "repo": "zsh-syntax-highlighting",
-        "type": "github"
       }
     }
   },
